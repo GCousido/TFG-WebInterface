@@ -46,7 +46,7 @@ The web interface will be available at `http://localhost:8080`.
 ## Requirements
 
 - Python 3.12+
-- The TFG-[TFG-DatasetConverter](https://github.com/GCousido/TFG-DatasetConverter) library (installed automatically via requirements)
+- The [TFG-DatasetConverter](https://github.com/GCousido/TFG-DatasetConverter) library (installed automatically via requirements)
 
 ## License
 
