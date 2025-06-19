@@ -1,0 +1,5 @@
+.venv
+.vscode
+__pycache__
+temp_uploads
+conversion_results

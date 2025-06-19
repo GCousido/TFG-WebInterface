@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataset Converter - Web Interface</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Dataset Converter Web Interface</h1>
+            <p class="subtitle">Convert datasets between image annotation formats</p>
+        </header>
+
+        <!-- Main Card -->
+        <main class="card main-card">
+            <div class="card__body">
+                <!-- Form -->
+                <form id="convertForm">
+                    <!-- Format Selection Section -->
+                    <section class="format-section">
+                        <h2>Select Conversion Formats</h2>
+                        <div class="format-selectors">
+                            <div class="format-group">
+                                <label class="form-label" for="input-format">Input Format</label>
+                                <select id="input-format" class="form-control">
+                                    <option value="">Select format...</option>
+                                    <option value="yolo">YOLO</option>
+                                    <option value="pascal_voc">Pascal VOC</option>
+                                    <option value="coco">COCO</option>
+                                    <option value="createml">CreateML</option>
+                                    <option value="tensorflow_csv">Tensorflow Object Detection CSV</option>
+                                    <option value="labelme">LabelMe JSON</option>
+                                    <option value="vgg">VGG Image Annotator JSON</option>
+                                </select>
+
+                                <a id="input-example-link" href="#" download class="btn btn--primary hidden"></a>
+                            </div>
+                            
+                            <div class="conversion-arrow">
+                                <span class="arrow-icon">→</span>
+                            </div>
+                            
+                            <div class="format-group">
+                                <label class="form-label" for="output-format">Output Format</label>
+                                <select id="output-format" class="form-control">
+                                    <option value="">Select format...</option>
+                                    <option value="yolo">YOLO</option>
+                                    <option value="pascal_voc">Pascal VOC</option>
+                                    <option value="coco">COCO</option>
+                                    <option value="createml">CreateML</option>
+                                    <option value="tensorflow_csv">Tensorflow Object Detection CSV</option>
+                                    <option value="labelme">LabelMe JSON</option>
+                                    <option value="vgg">VGG Image Annotator JSON</option>
+                                </select>
+
+                                <a id="output-example-link" href="#" download class="btn btn--primary hidden"></a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- File Upload Section -->
+                    <section class="upload-section">
+                        <h2>Upload Dataset</h2>
+                        <div id="dropZone" class="drop-zone">
+                            <div class="drop-zone-content">
+                                <div class="folder-icon"></div>
+                                <p id="drop-text" class="drop-text">📁 Drag the dataset folder/file here</p>
+                                <p id="browseFiles" class="browse-button" id="browse-files">or Browse Files</p>
+                                <input type="file" id="fileInput" class="hidden" webkitdirectory directory multiple>
+                            </div>
+                        </div>
+                        
+                        <div id="file-list" class="file-list hidden">
+                            <h2>Selected Files</h2>
+                            <div id="files-container"></div>
+                        </div>
+                    </section>
+
+                    <!-- Submit -->
+                    <section class="processing-section">
+                        <button id="convert-btn" class="btn btn--primary btn--full-width" type="submit" disabled>
+                            Start Conversion
+                        </button>
+                    </section>
+                </form>
+
+                <!-- Results Section -->
+                <section id="results-section" class="results-section hidden">
+                    <div id="result-div" class="result-message">
+                        <span id="result-icon" class="result-icon"></span>
+                        <h3 id="result-title"></h3>
+                        <p id="result-message"></p>
+                    </div>
+                    
+                    <div id="result-buttons" class="result-actions hidden">
+                        <button id="downloadLink" class="btn btn--primary">
+                            <a id="resultLink" href="#" download>📥 Download Converted Dataset in ZIP</a>
+                        </button>
+
+                        <button id="new-conversion-btn" class="btn btn--secondary">
+                            🔄 New Conversion
+                        </button>
+
+                        <button id="download-location" class="btn btn--primary">
+                            📁 Select a folder to download the Converted Dataset
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>DatasetConverter - Developed by Guillermo Cousido Martínez</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
