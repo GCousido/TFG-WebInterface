@@ -4,7 +4,7 @@ This project is a web interface for the library [**TFG-DatasetConverter**](https
 
 ## Overview
 
-The web interface provides an easy-to-use platform for converting and processing datasets using the [**TFG-DatasetConverter**](https://github.com/GCousido/TFG-DatasetConverter) Python library. It is designed to simplify data handling tasks, especially for users working with various dataset formats in machine learning and computer vision projects.
+This web interface provides an easy-to-use platform for converting and processing datasets using the [**TFG-DatasetConverter**](https://github.com/GCousido/TFG-DatasetConverter) Python library. It is designed to simplify data handling tasks for users working with various dataset formats in computer vision projects.
 
 ## Features
 
@@ -13,7 +13,12 @@ The web interface provides an easy-to-use platform for converting and processing
 - Supports multiple data formats: YOLO, COCO, Pascal VOC, LabelMe JSON, TensorFlow CSV, VGG Image Annotator JSON and CreateML.
 - Example datasets for each format.
 
-## Getting Started
+## Installation
+
+### Requirements
+
+- Python 3.12+
+- The [TFG-DatasetConverter](https://github.com/GCousido/TFG-DatasetConverter) library (installed automatically via requirements)
 
 ### 1. Clone the repository
 
@@ -28,7 +33,9 @@ The web interface provides an easy-to-use platform for converting and processing
     pip install -r requirements.txt
 ```
 
-### 3. Run the application
+## How to Use
+
+### Start the API
 
 ```bash
     cd API
@@ -37,16 +44,12 @@ The web interface provides an easy-to-use platform for converting and processing
 
 The web interface will be available at `http://localhost:8080`.
 
-## Usage
+### Interface Usage
 
-- Upload your dataset files directly through the web interface.
-- Select the desired input and output formats.
-- Start the conversion process and download the converted files once completed.
-
-## Requirements
-
-- Python 3.12+
-- The [TFG-DatasetConverter](https://github.com/GCousido/TFG-DatasetConverter) library (installed automatically via requirements)
+1. **Upload** your dataset files directly through the web interface.
+2. **Select** the desired input and output formats.
+3. **Start** the conversion process.
+4. **Download** the converted files once completed.
 
 ## License
 
