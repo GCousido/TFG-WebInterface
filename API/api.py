@@ -14,8 +14,7 @@ from fastapi import FastAPI, UploadFile, File, Form, Request
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
-from datasetconverter.cli import get_dataset_names
-
+from vision_converter.cli import get_dataset_names
 
 # Configure logging
 logging.basicConfig(
@@ -23,7 +22,7 @@ logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S"
 )
-logger = logging.getLogger("DatasetConverter-API")
+logger = logging.getLogger("VisionConverter-API")
 
 # Create FastAPI
 app = FastAPI()
@@ -227,20 +226,20 @@ def convert(job_id: str, input_format: str, input_path: str, output_format: str,
             return {"error": "Output path is not writable"}
 
         # Dynamic import of format classes
-        input_format_module = importlib.import_module(f'datasetconverter.formats.{input_format}')
+        input_format_module = importlib.import_module(f'vision_converter.formats.{input_format}')
         input_format_class_name = f"{get_dataset_names(input_format)}Format"
         input_format_class = getattr(input_format_module, input_format_class_name)
 
-        output_format_module = importlib.import_module(f'datasetconverter.formats.{output_format}')
+        output_format_module = importlib.import_module(f'vision_converter.formats.{output_format}')
         output_format_class_name = f"{get_dataset_names(output_format)}Format"
         output_format_class = getattr(output_format_module, output_format_class_name)
 
         # Dynamic import of converters
-        input_converter_module = importlib.import_module(f'datasetconverter.converters.{input_format}_converter')
+        input_converter_module = importlib.import_module(f'vision_converter.converters.{input_format}_converter')
         input_converter_class_name = f"{get_dataset_names(input_format)}Converter"
         input_converter_class = getattr(input_converter_module, input_converter_class_name)
 
-        output_converter_module = importlib.import_module(f'datasetconverter.converters.{output_format}_converter')
+        output_converter_module = importlib.import_module(f'vision_converter.converters.{output_format}_converter')
         output_converter_class_name = f"{get_dataset_names(output_format)}Converter"
         output_converter_class = getattr(output_converter_module, output_converter_class_name)
 

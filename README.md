@@ -1,10 +1,10 @@
-# Web Interface for DatasetConverter
+# Web Interface for VisionConverter
 
-This project is a web interface for the library [**TFG-DatasetConverter**](https://github.com/GCousido/TFG-DatasetConverter).
+This project is a web interface for the library [**VisionConverter**](https://github.com/GCousido/VisionConverter).
 
 ## Overview
 
-This web interface provides an easy-to-use platform for converting and processing datasets using the [**TFG-DatasetConverter**](https://github.com/GCousido/TFG-DatasetConverter) Python library. It is designed to simplify data handling tasks for users working with various dataset formats in computer vision projects.
+This web interface provides an easy-to-use platform for converting and processing datasets using the [**VisionConverter**](https://github.com/GCousido/VisionConverter) Python library. It is designed to simplify data handling tasks for users working with various dataset formats in computer vision projects.
 
 ## Features
 
@@ -18,7 +18,7 @@ This web interface provides an easy-to-use platform for converting and processin
 ### Requirements
 
 - Python 3.12+
-- The [TFG-DatasetConverter](https://github.com/GCousido/TFG-DatasetConverter) library (installed automatically via requirements)
+- The [VisionConverter](https://github.com/GCousido/VisionConverter) library (installed automatically via requirements)
 
 ### 1. Clone the repository
 
@@ -57,4 +57,4 @@ This project is licensed under the MIT License.
 
 ---
 
-For more details on the underlying conversion capabilities, refer to the [TFG-DatasetConverter](https://github.com/GCousido/TFG-DatasetConverter) library documentation.
+For more details on the underlying conversion capabilities, refer to the [VisionConverter](https://github.com/GCousido/VisionConverter) library documentation.
